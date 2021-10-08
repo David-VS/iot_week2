@@ -3,6 +3,7 @@ import circle as c
 import zwembad as z
 #importeert enkel de Device klasse uit de file
 from device import Device, DeviceManager
+from rectangle import Rectangle, Room
 
 #roept achterliggend de __init__functie op
 cirkel1 = c.Circle(2)
@@ -29,3 +30,13 @@ device_manager.add_device(78945, device2)
 for id, device in device_manager.device_dict.items():
     print(id)
     print(device)
+
+rect = Rectangle(3,5)
+get_rect = Rectangle(3,6)
+room = Room()
+
+room.add_wall(rect)
+room.add_wall(get_rect)
+
+print(room.total_surface())
+print(room.rolls_needed())
